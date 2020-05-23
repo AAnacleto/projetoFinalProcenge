@@ -1,0 +1,11 @@
+li#menu {
+  text-transform: capitalize;
+}
+li#menu:hover{
+  background-color: gray;
+
+}
+li#menu a:hover {
+  color: white;
+  font-weight: bolder;
+}

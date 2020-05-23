@@ -1,0 +1,60 @@
+<app-layout>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Buscar Venda </h5>
+
+      <div class="row">
+        <div class="form-group col-lg-12">
+
+          <label for="cliente" class="control-label">Cliente:</label>
+
+          <select [(ngModel)]="venda.cliente" class="form-control">
+            <option [ngValue]="null"> Selecione</option>
+            <option *ngFor="let cliente of listCliente" [ngValue]="cliente">{{cliente.nome}}</option>
+          </select>
+        </div>
+      </div>
+
+
+          <div class="row">
+            <div class="form-group col-lg-12">
+              <button type="button" class="btn btn-primary" (click)="consultarVendas()">Buscar</button>
+              <button type="button" class="btn btn-primary" style="margin-left: 15px;"(click)="consultarTodasVendas()">Buscar Todos</button>
+              <button type="button" class="btn btn-primary" style="margin-left: 15px;" (click)="fecharBusca()">Fecharbusca</button>
+             </div>
+          </div>
+
+         <div class="card">
+            <div class="card-body">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Código</th>
+                    <th>Cliente</th>
+                    <th>Data da Venda</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let venda of listVendas">
+                    <td><input type="radio" name="vendaSelecionado" (change)="selecionar(venda)" /></td>
+                    <td>{{venda.codigo}}</td>
+                    <td>{{venda.cliente.nome}}</td>
+                    <td>{{venda.data | date: 'dd/MM/yyyy'}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+       <br>
+          <div class="row">
+            <div class="form-group col-lg-12">
+              <button type="button" class="btn btn-primary" (click)="incluir()">Incluir</button>
+              <button type="button" class="btn btn-primary" style="margin-left: 8px;" (click)="removerVenda()">Excluir</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+</app-layout>

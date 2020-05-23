@@ -1,0 +1,53 @@
+<app-layout>
+<!--Card principal-->
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Cliente - {{operacao}}</h5>
+
+      <!--Formulário Cliente-->
+      <div class="row">
+        <div class="form-group col-lg-12">
+          <label for="nome" class="label-control">Nome:</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.nome">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-lg-12">
+          <label for="nome" class="label-control">Endereço:</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.endereco">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-lg-4">
+          <label for="nome" class="label-control">Cep:</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.cep">
+        </div>
+        <div class="form-group col-lg-4">
+          <label for="nome" class="label-control">Cidade:</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.cidade">
+        </div>
+        <div class="form-group col-lg-4">
+          <label for="nome" class="label-control">UF:</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.uf">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-lg-12">
+          <label for="nome" class="label-control">Telefone:</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.telefone">
+        </div>
+      </div>
+
+      <!--Botões de incluir, alterar e excluir-->
+      <div class="row">
+        <div class="col-lg-12">
+          <button *ngIf="operacao === 'Novo Cliente'" type="button" class="btn btn-primary"  (click)="incluirNovoCliente()">Salvar</button>
+          <button *ngIf="operacao === 'Alterar Dados'" type="button" class="btn btn-primary" (click)="alterarDadosCliente()">SalvarAlteração</button>
+          <button type="button" class="btn btn-primary" style="margin-left: 6px;" (click)="voltar()">Voltar</button>
+        </div>
+      </div>
+
+    <!--Fechamento Card Principal-->
+    </div>
+  </div>
+</app-layout>
