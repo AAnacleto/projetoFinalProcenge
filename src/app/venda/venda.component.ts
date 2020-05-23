@@ -26,7 +26,6 @@ export class VendaComponent implements OnInit {
 
   ngOnInit(): void {
     this.trazerClientes();
-    // this.trazerProdutos();
   }
 
   trazerClientes(){
@@ -64,16 +63,12 @@ export class VendaComponent implements OnInit {
     this.listVendas = [];
   }
 
-  selecionar(valor){
+  selecionarVenda(valor){
     this.vendaSelecionada = valor;
   }
 
-  incluir(){
+  incluirVenda(){
     this.router.navigate(['/venda/incluir']);
-  }
-
-  alterar(){
-    this.router.navigate(['/venda/alterar/' + this.vendaSelecionada.codigo]);
   }
 
   removerVenda(){

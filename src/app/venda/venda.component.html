@@ -1,21 +1,21 @@
 <app-layout>
+  <!--Card principal-->
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Buscar Venda </h5>
 
+      <!--Formulário-->
       <div class="row">
         <div class="form-group col-lg-12">
-
-          <label for="cliente" class="control-label">Cliente:</label>
-
-          <select [(ngModel)]="venda.cliente" class="form-control">
+            <label for="cliente" class="control-label">Cliente:</label>
+            <select [(ngModel)]="venda.cliente" class="form-control">
             <option [ngValue]="null"> Selecione</option>
             <option *ngFor="let cliente of listCliente" [ngValue]="cliente">{{cliente.nome}}</option>
           </select>
         </div>
       </div>
 
-
+         <!--Botões de busca-->
           <div class="row">
             <div class="form-group col-lg-12">
               <button type="button" class="btn btn-primary" (click)="consultarVendas()">Buscar</button>
@@ -24,8 +24,10 @@
              </div>
           </div>
 
-         <div class="card">
+         <!--card tabela-->
+          <div class="card">
             <div class="card-body">
+              <!--tabela cliente-->
               <table class="table table-striped">
                 <thead>
                   <tr>
@@ -37,7 +39,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let venda of listVendas">
-                    <td><input type="radio" name="vendaSelecionado" (change)="selecionar(venda)" /></td>
+                    <td><input type="radio" name="vendaSelecionado" (change)="selecionarVenda(venda)" /></td>
                     <td>{{venda.codigo}}</td>
                     <td>{{venda.cliente.nome}}</td>
                     <td>{{venda.data | date: 'dd/MM/yyyy'}}</td>
@@ -47,14 +49,16 @@
             </div>
           </div>
        <br>
+
+       <!--Botões de incluir e excluir-->
           <div class="row">
             <div class="form-group col-lg-12">
-              <button type="button" class="btn btn-primary" (click)="incluir()">Incluir</button>
+              <button type="button" class="btn btn-primary" (click)="incluirVenda()">Incluir</button>
               <button type="button" class="btn btn-primary" style="margin-left: 8px;" (click)="removerVenda()">Excluir</button>
             </div>
           </div>
 
+          <!--Fechamento card principal-->
         </div>
       </div>
-
 </app-layout>

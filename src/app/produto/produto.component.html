@@ -39,7 +39,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let produto of listProduto">
-                <td><input type="radio" name="selecionado" (change)="selecionar(produto)"/></td>
+                <td><input type="radio" name="selecionado" (change)="selecionarProduto(produto)"/></td>
                 <td>{{produto.codigo}}</td>
                 <td>{{produto.nome}}</td>
                 <td>{{produto.descricao}}</td>
