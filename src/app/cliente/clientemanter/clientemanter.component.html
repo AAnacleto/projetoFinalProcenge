@@ -41,7 +41,7 @@
       <!--Botões de incluir, alterar e excluir-->
       <div class="row">
         <div class="col-lg-12">
-          <button *ngIf="operacao === 'Novo Cliente'" type="button" class="btn btn-primary"  (click)="incluirNovoCliente()">Salvar</button>
+          <button *ngIf="operacao === 'Novo Cliente'" type="button" class="btn btn-secondary"  (click)="incluirNovoCliente()">Salvar</button>
           <button *ngIf="operacao === 'Alterar Dados'" type="button" class="btn btn-primary" (click)="alterarDadosCliente()">SalvarAlteração</button>
           <button type="button" class="btn btn-primary" style="margin-left: 6px;" (click)="voltar()">Voltar</button>
         </div>
